@@ -1,0 +1,134 @@
+import random
+
+Sc = "Scissors"
+Pa = "Paper"
+Ro = "Rock"
+Sp = "Spock"
+Li = "Lizard"
+
+# Input function
+def inputs():
+    print "\t1. ", Sc
+    print "\t2. ", Pa
+    print "\t3. ", Ro
+    print "\t4. ", Sp
+    print "\t5. ", Li
+    
+    sign1 = input("Choose your hand: ")
+    sign2 = input("Choose your hand: ")
+    return (sign1, sign2)
+
+# Random function
+def randoms():
+    
+    sign1 = random.randint(1, 5)
+    sign2 = random.randint(1, 5)
+    return (sign1, sign2)
+
+def computer():
+    print "\t1. ", Sc
+    print "\t2. ", Pa
+    print "\t3. ", Ro
+    print "\t4. ", Sp
+    print "\t5. ", Li 
+    
+    sign1 = input("Choose an random number above: ")
+    sign2 = random.randint(1, 5)
+    print "Computer chose", sign2
+    return (sign1, sign2)
+
+print "\t1. Inputs"
+print "\t2. Randoms"
+print "\t3. Computer"
+
+choose = input("Enter a value (1-3): ")
+
+if (choose == 1):
+    sign1, sign2 = inputs()
+elif (choose == 2):
+    sign1, sign2 = randoms()
+elif (choose == 3):
+    sign1, sign2 = computer()
+
+if (sign1 == 1):
+    if (sign2 == 2):
+        print
+        print Sc, "cuts", Pa
+    elif (sign2 == 5):
+        print
+        print Sc, "decapitates", Li 
+    else:
+        if (sign2 == 1):
+            print
+            print "Draw"
+        elif (sign2 == 3):
+            print
+            print Ro, "crushes", Sc
+        elif (sign2 == 4):
+            print
+            print Sp, "smashes", Sc
+elif (sign1 == 2):
+    if (sign2 == 3):
+        print
+        print Pa, "covers", Ro
+    elif (sign2 == 4):
+        print
+        print Pa, "disproves", Sp
+    else:
+        if (sign2 == 2):
+            print
+            print "Draw"
+        elif (sign2 == 1):
+            print
+            print Sc, "cuts", Pa
+        elif (sign2 == 5):
+            print
+            print Li, "eats", Pa
+elif (sign1 == 3):
+    if (sign2 == 5):
+        print
+        print Ro, "crushes", Li
+    elif (sign2 == 1):
+        print
+        print Ro, "crushes", Sc
+    else:
+        if (sign2 == 2):
+            print
+            print Pa, "covers", Ro
+        elif (sign2 == 4):
+            print
+            print Sp, "vaporizes", Ro
+        else:
+            print "Draw"
+elif (sign1 == 4):
+    if (sign2 == 1):
+        print
+        print Sp, "smashes", Sc
+    elif (sign2 == 3):
+        print
+        print Sp, "vaporizes", Ro
+    else:
+        if (sign2 == 2):
+            print
+            print Pa, "disproves", Sp
+        elif (sign2 == 5):
+            print
+            print Li, "poisons", Sp
+        else:
+            print "Draw"
+elif (sign1 == 5):
+    if (sign2 == 4):
+        print
+        print Li, "poisons", Sp
+    elif (sign2 == 2):
+        print
+        print Li, "eats", Pa
+    else:
+        if (sign2 == 1):
+            print
+            print Sc, "decapitates", Li
+        elif (sign2 == 3):
+            print
+            print Ro, "crushes", Li
+        else:
+            print "Draw"
